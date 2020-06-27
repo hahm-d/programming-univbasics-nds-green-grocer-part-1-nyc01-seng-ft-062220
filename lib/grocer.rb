@@ -28,7 +28,8 @@ def consolidate_cart(cart)
     
     #based on if item_hash is true (the item exists in our output_cart)
       if item_hash != nil
-         item_hash[:count] += 1
+         item_hash[:count] += 1 #remember in item_hash above we are using the output_cart parameter thus this will be updating the output_cart!!
+        # p output_cart
       else 
         new_entry = {
           :item => cart[index][:item],
@@ -37,6 +38,7 @@ def consolidate_cart(cart)
           :count => 1
         }
         output_cart << new_entry
+        #p output_cart
       end
   end
   output_cart
@@ -44,4 +46,4 @@ end
 
 
 
-  #binding.pry 
+ # binding.pry 
